@@ -1,0 +1,29 @@
+[
+	{
+		"name": "test1.1",
+		"sequence": [
+			{"input": "aaa", "output": ["bbb", "ccc"]}
+		]
+	},
+	{
+		"name": "test1.2",
+		"sequence": [
+			{"input": "aaa", "output": ["bbb"]},
+			{"input": "bbb", "output": ["123"]},
+			{"input": "ccc", "output": ["333"]}
+		]
+	},
+	{
+		"name": "test1.3",
+		"sequence": [
+			{"input": "aaa", "output": ["bbb", "ccc"]},
+			{"input": "ccc", "output": ["333"]},
+			{"input": "ccc", "output": []},
+			{"input": "ccc", "output": ["333"]}
+		]
+	},
+	{
+		"name": "test1.4",
+		"sequence": []
+	}
+]

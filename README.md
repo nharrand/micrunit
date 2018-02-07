@@ -13,7 +13,7 @@ Simply run `micrunit.py`
 ## Installation
 micrunit requires the pyserial package. You can install it with pip
 ```
-	pip instal pyserial
+pip instal pyserial
 ```
 or download it [here](https://pypi.python.org/pypi/pyserial).
 
@@ -25,7 +25,10 @@ or download it [here](https://pypi.python.org/pypi/pyserial).
 	{
 		"name": "Name of the test",
 		"sequence": [
-			{"input": "Char to feed to the serial port", "output": ["expected output 1", "expected output 2"]}
+			{
+				"input": "Char to feed to the serial port",
+				"output": ["expected output 1", "expected output 2"]
+			}
 		]
 	}
 ]
