@@ -13,7 +13,7 @@ Simply run `micrunit.py`
 ## Installation
 micrunit requires the pyserial package. You can install it with pip
 ```
-pip instal pyserial
+pip install pyserial
 ```
 or download it [here](https://pypi.python.org/pypi/pyserial).
 
