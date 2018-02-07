@@ -32,5 +32,4 @@ for f in testFiles:
 	runTestCase(join(testDir, f), ser)
 
 ser.close()
-print "[INFO] Done."
 print "--------------------------------"

@@ -38,3 +38,13 @@ or download it [here](https://pypi.python.org/pypi/pyserial).
 Note that a file can contain sveral test cases, a sequence can contain several pair (input, list of expected outputs).
 
 See `test/testcases/test1.json` for more examples.
+
+## Test the micrunit script
+
+Open two connected virtual serial ports
+
+```
+socat -d -d pty,raw,echo=0 pty,raw,echo=0
+```
+
+Configure `test/config.py` and run `test/responder.py`

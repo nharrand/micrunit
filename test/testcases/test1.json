@@ -1,12 +1,12 @@
 [
 	{
-		"name": "test1.1",
+		"name": "test 1.1",
 		"sequence": [
 			{"input": "aaa", "output": ["bbb", "ccc"]}
 		]
 	},
 	{
-		"name": "test1.2",
+		"name": "test 1.2",
 		"sequence": [
 			{"input": "aaa", "output": ["bbb"]},
 			{"input": "bbb", "output": ["123"]},
@@ -14,7 +14,7 @@
 		]
 	},
 	{
-		"name": "test1.3",
+		"name": "test 1.3",
 		"sequence": [
 			{"input": "aaa", "output": ["bbb", "ccc"]},
 			{"input": "ccc", "output": ["333"]},
@@ -23,7 +23,7 @@
 		]
 	},
 	{
-		"name": "test1.4",
+		"name": "test 1.4",
 		"sequence": []
 	}
 ]

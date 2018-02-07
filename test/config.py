@@ -1,11 +1,11 @@
 # -*-coding:Utf-8 -*
 
 # Path to test directory. It should contains json describing test cases.
-testDir = "test/testcases"
+testDir = "testcases"
 
 # Path to serial
-serialPort = '/dev/pts/28'
+serialPort = '/dev/pts/29'
 # Baudrate
 serialBaudRate = '9600'
 # Time to wait before declaring a test as failed
-timeout = 1
+timeout = 10
