@@ -17,53 +17,53 @@ def readResp(serialport):
 			if inByte == endChar:
 				return buf + endChar
 			else:
-				buf += inByte
+				buf += str(inByte)
 def flush(serialport):
 	while serialport.inWaiting() > 0:
 		inByte = serialport.read(1)
 
 def runTestCase(file, serialport):
-	print "[INFO] Running", file
+	print("[INFO] Running", file)
 	#time.sleep(2)
 	flush(serialport)
 	testcases = json.load(open(file))
 	failures = 0
 	for tc in testcases:
-		print "[INFO] Running", tc['name']
+		print("[INFO] Running", tc['name'])
 		for seq in tc['sequence']:
 			flush(serialport)
-			print "[INFO] -- Input", seq['input']
-			print "[INFO] -- Expecting", ', '.join(seq['output'])
-			wl = serialport.write(bytes(seq['input'] + endChar))
-			#print "wrote ", wl, " bytes", bytes(seq['input'] + endChar)
+			print("[INFO] -- Input", seq['input'])
+			print("[INFO] -- Expecting", ', '.join(seq['output']))
+			wl = serialport.write(bytes(seq['input'] + endChar, "ascii"))
+			#print("wrote ", wl, " bytes", bytes(seq['input'] + endChar))
 			#serialport.flushOutput();
 			time.sleep(1)
 			failed = False
 			for expected in seq['output']:
-				print "[Info] -- waiting for", expected
+				print("[Info] -- waiting for", expected)
 				expected += endChar
 				#output = serialport.readline()
 				output = readResp(serialport)
 				if len(output) == 0:
-					print "[FAILURE] timeout "
+					print("[FAILURE] timeout ")
 					failures += 1
 					failed = True
 					break
 				elif output == expected:
-					print "[INFO] -- -- OK"
+					print("[INFO] -- -- OK")
 				else:
-					print "[FAILURE] got", output
+					print("[FAILURE] got", output)
 					failures += 1
 					failed = True
 					break
 			if not failed and serialport.inWaiting() > 0:
-				print "[FAILURE] extra", serialport.read(serialport.inWaiting())
+				print("[FAILURE] extra", serialport.read(serialport.inWaiting()))
 				failures += 1
 				failed = True
 			if failed:
 				break
 	
-	print "--------------------------------"
-	print "[INFO] test:", len(testcases), ", failures:", failures
-	print "--------------------------------"
-	serialport.write(bytes(endChar))
+	print("--------------------------------")
+	print("[INFO] test:", len(testcases), ", failures:", failures)
+	print("--------------------------------")
+	serialport.write(bytes(endChar, "ascii"))
