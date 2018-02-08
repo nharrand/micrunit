@@ -7,6 +7,7 @@ from config import endChar
 
 #endChar = '.'
 
+
 def readResp(serialport):
 	buf = ""
 	while True:
@@ -14,10 +15,12 @@ def readResp(serialport):
 			time.sleep(.1)
 		while serialport.inWaiting() > 0:
 			inByte = serialport.read(1)
-			if inByte == endChar:
-				return buf + endChar
+			#print("in",inByte)
+			if inByte == bytes(endChar, "ascii"):
+				#print("ok")
+				return buf
 			else:
-				buf += str(inByte)
+				buf += inByte.decode("ascii")
 def flush(serialport):
 	while serialport.inWaiting() > 0:
 		inByte = serialport.read(1)
@@ -41,7 +44,6 @@ def runTestCase(file, serialport):
 			failed = False
 			for expected in seq['output']:
 				print("[Info] -- waiting for", expected)
-				expected += endChar
 				#output = serialport.readline()
 				output = readResp(serialport)
 				if len(output) == 0:

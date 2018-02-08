@@ -4,7 +4,7 @@ char buf[buf_size];
 int len = 0;
 
 //char endChar= '.';
-char endChar= 'n';
+char endChar= '\n';
 
 void setup() {
   // initialize serial:
