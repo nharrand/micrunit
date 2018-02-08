@@ -4,8 +4,11 @@
 testDir = "testcases"
 
 # Path to serial
-serialPort = '/dev/pts/29'
+serialPort = '/dev/pts/21'
 # Baudrate
 serialBaudRate = '9600'
 # Time to wait before declaring a test as failed
 timeout = 10
+
+#Separation character ending an input
+endChar = '\n'
