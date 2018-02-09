@@ -1,6 +1,6 @@
 # micrunit
-
-Simple serial port unit testing harness
+micrunit is a python3 serial port unit testing harness. 
+It takes json test cases (describing inputs and expected outputs) and run them. Running a test case consist simply into feeding the inputs one by one to an USART while checking that the actual output correspond to the expected one.
 
 ## Configuration
 
@@ -8,10 +8,15 @@ Modify the file `config.py` to change the serial port and the test directory (wh
 
 ## Run
 
-Simply run `micrunit.py`
+Simply run `python micrunit.py`
 
 ## Installation
-micrunit requires the pyserial package. You can install it with pip
+
+micrunit requires:
+ * python 3
+ * the pyserial package. 
+
+You can install pyserial with pip
 ```
 pip install pyserial
 ```
